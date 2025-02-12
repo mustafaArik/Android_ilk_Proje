@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ilk Proje</string>
+    <string name="girisDugme">Giriş</string>
+    <string name="textIpucu">Kullanıcı Adı</string>
+</resources>
