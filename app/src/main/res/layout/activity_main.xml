@@ -31,15 +31,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        tools:layout_editor_absoluteX="1dp">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:rotation="11"
+            android:rotationX="19"
+            android:rotationY="-30"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="tikla_buton"
+            android:rotation="-9"
+            android:rotationX="21"
+            android:rotationY="21"
+            android:text="@string/girisDugme" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/saat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
-        android:onClick="tikla_buton"
-        android:text="@string/girisDugme"
+        android:text="00:00"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

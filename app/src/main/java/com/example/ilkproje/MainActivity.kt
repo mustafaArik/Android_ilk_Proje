@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.ilkproje.databinding.ActivityMainBinding
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var tasarim : ActivityMainBinding
@@ -25,6 +27,13 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+        val formatter = DateTimeFormatter.ofPattern("HH:mm")
+        val current = LocalDateTime.now().format(formatter)
+
+        tasarim.saat.setText(current)
+
 
         tasarim.textView.text = "Program açıldı"
         /*
