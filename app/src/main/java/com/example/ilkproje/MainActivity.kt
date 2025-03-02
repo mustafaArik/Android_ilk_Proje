@@ -3,6 +3,7 @@ package com.example.ilkproje
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -21,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         enableEdgeToEdge()
-//        setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -33,9 +33,8 @@ class MainActivity : AppCompatActivity() {
         val current = LocalDateTime.now().format(formatter)
 
         tasarim.saat.setText(current)
+        Toast.makeText(this,"Merhaba",Toast.LENGTH_SHORT).show()
 
-
-        tasarim.textView.text = "Program açıldı"
         /*
                 tasarim.button.setOnClickListener{
                     tasarim.textView.text = "Butona tıklandı"
@@ -48,6 +47,43 @@ class MainActivity : AppCompatActivity() {
 
     fun tikla_buton(view: View)
     {
-        tasarim.textView.text = "Butona tıklandı. Fonksiyon çalıştı"
+        var sinif = "9"
+        var ders = ""
+        if(tasarim.radioButton2.isChecked) sinif = "10"
+        else if(tasarim.radioButton3.isChecked) sinif = "11"
+
+        if(tasarim.checkBox.isChecked) ders = ders + " WTUG,"
+        if(tasarim.checkBox2.isChecked) ders = ders + " Mobil,"
+        if(tasarim.checkBox3.isChecked) ders = ders + " Yazılım Prj. "
+
+
+        Toast.makeText(
+            this@MainActivity,
+            "Sınıfınız : $sinif \n Dersleriniz $ders",
+            Toast.LENGTH_LONG
+        ).show()
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
